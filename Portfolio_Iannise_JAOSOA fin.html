@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iannise JAOSOA — Portfolio Marketing Digital</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2550;--blue:#1a3a7c;--accent:#2563eb;--gold:#c8a45a;--light:#f0f4fc;--gray:#64748b;--text:#1e293b;--border:#dde4f0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#f8faff;color:var(--text)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,37,80,.97);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:60px;border-bottom:1px solid rgba(200,164,90,.2)}
+.nav-brand{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.1rem;font-weight:700;letter-spacing:.3px}
+.nav-links{display:flex;gap:1.4rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(145deg,#0a1a3e 0%,#1a3a7c 55%,#1e4db7 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 5% 60px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:55px 55px}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 105%,rgba(200,164,90,.1) 0%,transparent 65%)}
+.hero-content{position:relative;z-index:1;max-width:720px}
+.hero-photo-wrap{margin-bottom:24px;display:flex;justify-content:center}
+.hero-photo{width:108px;height:108px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 0 7px rgba(200,164,90,.12)}
+.photo-ph{width:108px;height:108px;border-radius:50%;border:2px dashed rgba(200,164,90,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:rgba(200,164,90,.04);transition:all .25s}
+.photo-ph.clickable{cursor:pointer}
+.photo-ph.clickable:hover{background:rgba(200,164,90,.14);border-color:var(--gold)}
+.photo-ph svg{width:24px;height:24px;stroke:rgba(200,164,90,.65);stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.photo-ph span{font-size:.6rem;color:rgba(200,164,90,.65);letter-spacing:.8px;text-transform:uppercase}
+.hero-tag{display:inline-block;background:rgba(200,164,90,.12);border:1px solid rgba(200,164,90,.35);color:var(--gold);font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 15px;border-radius:50px;margin-bottom:18px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);color:#fff;font-weight:900;line-height:1.1;margin-bottom:10px}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:.98rem;color:rgba(255,255,255,.65);margin-bottom:8px;font-weight:300;line-height:1.6}
+.hero-loc{font-size:.78rem;color:rgba(255,255,255,.38);margin-bottom:32px}
+.hero-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+.btn-gold{background:var(--gold);color:var(--navy);padding:11px 24px;border-radius:6px;text-decoration:none;font-weight:700;font-size:.86rem;transition:all .2s;border:none;cursor:pointer}
+.btn-gold:hover{background:#d4b06a;transform:translateY(-2px)}
+.btn-out{border:1px solid rgba(255,255,255,.28);color:#fff;padding:11px 24px;border-radius:6px;text-decoration:none;font-weight:500;font-size:.86rem;background:transparent;transition:all .2s}
+.btn-out:hover{border-color:rgba(255,255,255,.55)}
+.hero-stats{display:flex;justify-content:center;gap:2.8rem;padding-top:32px;border-top:1px solid rgba(255,255,255,.08)}
+.sv{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:900;color:var(--gold)}
+.sl{font-size:.66rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:1.2px;margin-top:2px}
+
+/* SECTIONS */
+section{padding:76px 5%}
+.si{max-width:960px;margin:0 auto}
+.slbl{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.6vw,2.1rem);color:var(--navy);margin-bottom:11px;font-weight:700}
+.sdiv{width:42px;height:3px;background:var(--gold);margin-bottom:40px;border-radius:2px}
+
+/* ABOUT */
+.about-sec{background:#fff}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.about-text p{color:var(--gray);margin-bottom:13px;font-size:.92rem;line-height:1.82}
+.crow{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.cion{width:29px;height:29px;background:var(--light);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.crow span{font-size:.84rem;color:var(--gray)}
+.ski{margin-bottom:13px}
+.skt{display:flex;justify-content:space-between;margin-bottom:5px}
+.skn{font-size:.84rem;font-weight:500}
+.skp{font-size:.74rem;color:var(--gray)}
+.skb{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.skf{height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:3px}
+
+/* AI SKILLS PILLS */
+.ai-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pill{display:inline-flex;align-items:center;gap:5px;background:var(--light);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:.78rem;font-weight:500;color:var(--blue)}
+.pill.ai{background:#eef2ff;border-color:#c7d2fe;color:#3730a3}
+.pill.soft{background:#f0fdf4;border-color:#bbf7d0;color:#166534}
+
+/* SOFT SKILLS */
+.soft-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:0}
+.soft-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;transition:all .2s}
+.soft-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.soft-icon{font-size:1.4rem;margin-bottom:6px}
+.soft-label{font-size:.8rem;font-weight:600;color:var(--navy)}
+.soft-sub{font-size:.72rem;color:var(--gray);margin-top:2px;line-height:1.4}
+
+
+.cert-sec{background:#fff}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:18px}
+.cc{border:1px solid var(--border);border-radius:13px;padding:22px;background:#fff;transition:all .25s;text-decoration:none;display:block;color:inherit;position:relative;overflow:hidden}
+.cc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.cc.meta::before{background:linear-gradient(90deg,#0180FA,#00B4FF)}
+.cc.ibm::before{background:linear-gradient(90deg,#054ADA,#1F70C1)}
+.cc:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,.08)}
+.cbadge{display:inline-flex;align-items:center;gap:5px;background:var(--light);padding:3px 10px;border-radius:20px;font-size:.68rem;font-weight:700;margin-bottom:12px;color:var(--blue);text-transform:uppercase;letter-spacing:.5px}
+.cname{font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:6px;line-height:1.4}
+.cdesc{font-size:.8rem;color:var(--gray);line-height:1.55;margin-bottom:12px}
+.cfooter{display:flex;justify-content:space-between;align-items:center}
+.cdate{font-size:.74rem;color:var(--gray)}
+.cver{font-size:.74rem;color:var(--accent);font-weight:600}
+
+/* EDU */
+.edu-sec{background:var(--navy)}
+.edu-sec .stitle{color:#fff}
+.edu-sec .slbl{color:var(--gold)}
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:16px}
+.ec{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:22px;transition:all .25s}
+.ec:hover{background:rgba(255,255,255,.1)}
+.eicon{font-size:1.45rem;margin-bottom:11px}
+.edeg{font-family:'Playfair Display',serif;font-size:.95rem;color:#fff;font-weight:700;margin-bottom:5px;line-height:1.35}
+.esc{font-size:.82rem;color:var(--gold);margin-bottom:3px}
+.edts{font-size:.74rem;color:rgba(255,255,255,.32)}
+
+/* LANG */
+.lang-sec{background:#fff}
+.lg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.lc{text-align:center;padding:26px 14px;border:1px solid var(--border);border-radius:13px}
+.lf{font-size:2rem;margin-bottom:8px}
+.ln{font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:3px}
+.ll{font-size:.78rem;color:var(--gray)}
+
+footer{background:var(--navy);color:rgba(255,255,255,.4);text-align:center;padding:26px 5%;font-size:.8rem}
+footer strong{color:var(--gold)}
+
+/* MODAL */
+
+@media(max-width:660px){.ag{grid-template-columns:1fr}.lg{grid-template-columns:1fr}.hero-stats{gap:1.5rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Iannise JAOSOA</div>
+  <div class="nav-links">
+    <a href="#about">Profil</a>
+    <a href="#certifications">Certifs</a>
+    <a href="#education">Formation</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">✦ Portfolio Professionnel</div>
+    <div class="hero-photo-wrap">
+      <div id="photo-ph" class="photo-ph" title="Active le mode Modifier pour ajouter ta photo">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Photo</span>
+      </div>
+      <img class="hero-photo" id="hero-img" src="" alt="Iannise JAOSOA" style="display:none">
+    </div>
+    <input type="file" id="photo-input" accept="image/*" style="display:none" onchange="handlePhoto(event)">
+    <h1>Iannise<br><span>JAOSOA</span></h1>
+    <p class="hero-loc">📍 Temara, Rabat · Maroc &nbsp;|&nbsp; HEC Rabat M1 2025–2026</p>
+    <div class="hero-btns">
+      <a href="#certifications" class="btn-gold">Voir mes certifications</a>
+      <a href="mailto:iannisejs@gmail.com" class="btn-out">Me contacter</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="sv">1+</div><div class="sl">An d'expérience</div></div>
+      <div><div class="sv">Meta</div><div class="sl">Certifiée Ads</div></div>
+      <div><div class="sv">IBM</div><div class="sl">Certifiée Data</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="si">
+    <div class="slbl">À propos</div>
+    <h2 class="stitle">Profil Professionnel</h2>
+    <div class="sdiv"></div>
+    <div class="ag">
+      <div class="about-text">
+        <p>Étudiante en Master Marketing Digital à HEC Rabat, je combine vision stratégique, sens créatif et culture data pour concevoir des actions digitales à impact.</p>
+        <p>Mon parcours — expérience terrain en community management, maîtrise des outils IA génératifs et certification IBM en data visualisation — m'a appris à penser la communication digitale de bout en bout : de la création de contenu à l'analyse de performance.</p>
+        <p>Rigoureuse, curieuse et orientée résultats, je m'adapte rapidement aux environnements dynamiques et apporte une contribution concrète dès le premier jour.</p>
+        <div style="margin-top:18px">
+          <div class="crow"><div class="cion">📧</div><span>iannisejs@gmail.com</span></div>
+          <div class="crow"><div class="cion">📱</div><span>+212 6 22 23 93 31</span></div>
+          <div class="crow"><div class="cion">📍</div><span>Al Firdaous, Temara, Rabat</span></div>
+        </div>
+      </div>
+      <div>
+        <div style="margin-bottom:20px">
+          <p style="font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin-bottom:10px">Outils & Compétences techniques</p>
+          <div class="ski"><div class="skt"><span class="skn">Réseaux sociaux & Community Mgmt</span><span class="skp">90%</span></div><div class="skb"><div class="skf" style="width:90%"></div></div></div>
+          <div class="ski"><div class="skt"><span class="skn">Campagnes Meta Ads</span><span class="skp">75%</span></div><div class="skb"><div class="skf" style="width:75%"></div></div></div>
+          <div class="ski"><div class="skt"><span class="skn">Création visuelle (Canva)</span><span class="skp">85%</span></div><div class="skb"><div class="skf" style="width:85%"></div></div></div>
+          <div class="ski"><div class="skt"><span class="skn">Data & Analyse (Excel / Cognos)</span><span class="skp">70%</span></div><div class="skb"><div class="skf" style="width:70%"></div></div></div>
+          <div class="ski"><div class="skt"><span class="skn">SEO & Stratégie digitale</span><span class="skp">60%</span></div><div class="skb"><div class="skf" style="width:60%"></div></div></div>
+        </div>
+        <p style="font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin-bottom:9px">IA Générative</p>
+        <div class="ai-pills">
+          <span class="pill ai">🤖 ChatGPT</span>
+          <span class="pill ai">🖼 Nanobanana</span>
+          <span class="pill ai">🎬 Flow (vidéo)</span>
+          <span class="pill ai">✨ Canva AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOFT SKILLS -->
+<section style="background:var(--light);padding:60px 5%">
+  <div class="si">
+    <div class="slbl">Qualités humaines</div>
+    <h2 class="stitle">Soft Skills</h2>
+    <div class="sdiv"></div>
+    <div class="soft-grid">
+      <div class="soft-card"><div class="soft-icon">🎨</div><div class="soft-label">Créativité</div><div class="soft-sub">Concepts visuels originaux et contenus engageants</div></div>
+      <div class="soft-card"><div class="soft-icon">🔍</div><div class="soft-label">Esprit analytique</div><div class="soft-sub">Lecture des données et optimisation continue</div></div>
+      <div class="soft-card"><div class="soft-icon">🎯</div><div class="soft-label">Orientée résultats</div><div class="soft-sub">Focus KPIs, ROI et impact mesurable</div></div>
+      <div class="soft-card"><div class="soft-icon">⚡</div><div class="soft-label">Adaptabilité</div><div class="soft-sub">À l'aise avec les outils et tendances émergentes</div></div>
+      <div class="soft-card"><div class="soft-icon">🤝</div><div class="soft-label">Travail en équipe</div><div class="soft-sub">Collaboration cross-fonctionnelle et communication claire</div></div>
+      <div class="soft-card"><div class="soft-icon">🗂</div><div class="soft-label">Organisation</div><div class="soft-sub">Gestion de plusieurs projets en parallèle</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="cert-sec" id="certifications">
+  <div class="si">
+    <div class="slbl">Certifications</div>
+    <h2 class="stitle">Certifications Coursera</h2>
+    <div class="sdiv"></div>
+    <div class="cg">
+      <a href="https://coursera.org/verify/7JSBJ9KZV1J7" target="_blank" class="cc meta">
+        <div class="cbadge">🏢 Meta</div>
+        <div class="cname">Social Media Management</div>
+        <div class="cdesc">Stratégie de contenu, planification éditoriale, gestion de communauté et analyse.</div>
+        <div class="cfooter"><span class="cdate">Avr. 2026</span><span class="cver">Vérifier ↗</span></div>
+      </a>
+      <a href="https://coursera.org/verify/YBG4XM2HG58A" target="_blank" class="cc ibm">
+        <div class="cbadge">🔵 IBM</div>
+        <div class="cname">Data Visualization & Dashboards — Excel & Cognos</div>
+        <div class="cdesc">Visualisations de données et tableaux de bord avec Excel et IBM Cognos.</div>
+        <div class="cfooter"><span class="cdate">Avr. 2026</span><span class="cver">Vérifier ↗</span></div>
+      </a>
+      <a href="https://coursera.org/verify/E40LV4HP1S3Y" target="_blank" class="cc meta">
+        <div class="cbadge">🏢 Meta</div>
+        <div class="cname">Introduction to Social Media Marketing</div>
+        <div class="cdesc">Fondamentaux du marketing sur les réseaux sociaux et stratégies de croissance.</div>
+        <div class="cfooter"><span class="cdate">Mar. 2026</span><span class="cver">Vérifier ↗</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="edu-sec" id="education">
+  <div class="si">
+    <div class="slbl">Formation</div>
+    <h2 class="stitle">Parcours Académique</h2>
+    <div class="sdiv"></div>
+    <div class="eg">
+      <div class="ec"><div class="eicon">🎓</div><div class="edeg">Master 1 – Marketing, E-business & Digital Strategy</div><div class="esc">HEC Rabat — Maroc</div><div class="edts">2025 – 2026 (en cours)</div></div>
+      <div class="ec"><div class="eicon">📘</div><div class="edeg">Master – Marketing et Commerce International</div><div class="esc">Université ACEEM — Madagascar</div><div class="edts">2023 – 2025</div></div>
+      <div class="ec"><div class="eicon">📋</div><div class="edeg">Licence – Management des Affaires (BBA)</div><div class="esc">Université ACEEM — Madagascar</div><div class="edts">2020 – 2023</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUES -->
+<section class="lang-sec">
+  <div class="si">
+    <div class="slbl">Langues</div>
+    <h2 class="stitle">Compétences Linguistiques</h2>
+    <div class="sdiv"></div>
+    <div class="lg">
+      <div class="lc"><div class="lf">🇲🇬</div><div class="ln">Malgache</div><div class="ll">Langue maternelle</div></div>
+      <div class="lc"><div class="lf">🇫🇷</div><div class="ln">Français</div><div class="ll">Avancé (C1)</div></div>
+      <div class="lc"><div class="lf">🇬🇧</div><div class="ln">Anglais</div><div class="ll">Intermédiaire (B1)</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Iannise JAOSOA</strong> · Étudiante en Marketing Digital · HEC Rabat</p>
+  <p style="margin-top:5px">📧 iannisejs@gmail.com · 📱 +212 6 22 23 93 31</p>
+</footer>
+
+<script>
+const KEY='portfolio_iannise_v4';
+let S=load(),editMode=false;
+
+function load(){try{const r=localStorage.getItem(KEY);return r?JSON.parse(r):{photo:null}}catch(e){return{photo:null}}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+window.addEventListener('DOMContentLoaded',()=>{if(S.photo)showPhoto(S.photo)});
+
+function toggleEdit(){
+  editMode=!editMode;
+  const ph=document.getElementById('photo-ph');
+  ph.classList.toggle('clickable',editMode);
+  ph.onclick=editMode?()=>document.getElementById('photo-input').click():null;
+  if(editMode){ph.title='Cliquer pour changer la photo'}
+  else{ph.title=''}
+}
+
+function handlePhoto(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{S.photo=ev.target.result;save();showPhoto(S.photo)};
+  r.readAsDataURL(f);
+}
+function showPhoto(src){
+  document.getElementById('photo-ph').style.display='none';
+  const i=document.getElementById('hero-img');i.src=src;i.style.display='block';
+}
+</script>
+</body>
+</html>
